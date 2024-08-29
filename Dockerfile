@@ -33,6 +33,7 @@ RUN apk add --no-cache -t build-dependencies \
     openssl-dev \
     tar \
     git \
+    curl \
  && apk add --no-cache \
     ca-certificates \
     python3 \
@@ -44,6 +45,10 @@ RUN apk add --no-cache -t build-dependencies \
     uwsgi \
     uwsgi-python3 \
     brotli \
+# Install Rust and Cargo using rustup
+ && curl https://sh.rustup.rs -sSf | sh -s -- -y \
+ && source $HOME/.cargo/env \
+ && rustup default stable \
  && pip3 install --break-system-packages --no-cache -r requirements.txt \
  && apk del build-dependencies \
  && rm -rf /root/.cache
