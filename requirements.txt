@@ -22,5 +22,5 @@ anyio~=4.4.0
 Werkzeug~=3.0.3
 setuptools~=68.2.0
 
-sudachiPy~=0.6.8
+sudachiPy~=0.6.9
 sudachidict_core==20240716
